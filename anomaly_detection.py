@@ -34,4 +34,3 @@ if __name__ == "__main__":
     df["anomaly_if"] = detect_anomalies(X_scaled, method="isolation_forest")
     df["anomaly_svm"] = detect_anomalies(X_scaled, method="svm")
     df.to_csv("transactions.csv", index=False)
-    print("✅ Anomalies detected and saved to transactions.csv.")

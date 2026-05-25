@@ -14,12 +14,10 @@ def generate_fake_transactions(n=1000, seed=42):
 
     df = pd.DataFrame(data)
     
-    # Introduce anomalies
     anomalies = df.sample(frac=0.02)
-    df.loc[anomalies.index, "amount"] *= 10  # Unusually high amounts
+    df.loc[anomalies.index, "amount"] *= 10
 
     df.to_csv("transactions.csv", index=False)
-    print("✅ transactions.csv generated.")
 
 if __name__ == "__main__":
     generate_fake_transactions()
